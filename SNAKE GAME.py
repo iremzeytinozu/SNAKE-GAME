@@ -15,7 +15,7 @@ import random
 # Bu, oyunun görüntülendiği ana ekranı temsil eder.
 game_screen = turtle.Screen()
 game_screen.title("Snake Game")
-game_screen.setup(width=1400, height=800)
+game_screen.setup(width = 800, height = 600)
 game_screen.bgcolor('lightgreen')
 # Ekranın güncellemelerini kapatır.
 # Bu, oyunun daha düzenli ve hızlı çalışmasını sağlar.
@@ -64,7 +64,7 @@ score_board.speed(0)
 score_board.color('white')
 score_board.shape('square')
 score_board.penup()
-score_board.goto(0,350)
+score_board.goto(0,250)
 # hideturtle(): Bu fonksiyon, Turtle nesnesinin izini (okunu) gizler.
 # Yani, turtle nesnesi hareket ettiğinde veya çizim yaptığında iz bırakmaz.
 score_board.hideturtle()
@@ -117,7 +117,7 @@ game_screen.onkey(right_up, 'Right')
 while True:
     game_screen.update()
     
-    if snake_head.xcor() > 700 or snake_head.xcor() < -700 or snake_head.ycor() > 400 or snake_head.ycor() < -400:
+    if snake_head.xcor() > 400 or snake_head.xcor() < -400 or snake_head.ycor() > 300 or snake_head.ycor() < -300:
         time.sleep(1)
         snake_head.goto(0,0)
         snake_head.direction = 'stop'
@@ -132,14 +132,14 @@ while True:
         snake_speed = 0.1
 
     if snake_head.distance(bait) < 20:
-        x = random.randint(-300,300)
-        y = random.randint(-300,300)
+        x = random.randint(-200,200)
+        y = random.randint(-150,150)
         bait.goto(x,y)
         
         score += 10
         score_board.clear()
         score_board.write('Score : {}'.format(score), align='center',font=('Courier', 30,'normal'))
-        snake_speed = snake_speed - 0.01
+        snake_speed = snake_speed - 0.015
 
         add_tail = turtle.Turtle()
         add_tail.speed(0)
@@ -161,6 +161,3 @@ while True:
 
     move()
     time.sleep(snake_speed)  
-
-
-#####################################
