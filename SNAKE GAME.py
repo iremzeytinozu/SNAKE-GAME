@@ -139,7 +139,7 @@ while True:
         score += 10
         score_board.clear()
         score_board.write('Score : {}'.format(score), align='center',font=('Courier', 30,'normal'))
-        snake_speed = snake_speed - 0.015
+        snake_speed = snake_speed - 0.005
 
         add_tail = turtle.Turtle()
         add_tail.speed(0)
