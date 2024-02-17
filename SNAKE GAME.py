@@ -161,3 +161,6 @@ while True:
 
     move()
     time.sleep(snake_speed)  
+
+
+#####################################
